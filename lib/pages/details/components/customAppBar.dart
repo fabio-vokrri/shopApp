@@ -2,13 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shop_app/providers/productProvider.dart';
 
-class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
+class CustomAppBar extends StatefulWidget with PreferredSizeWidget {
   final product;
   const CustomAppBar({@required this.product});
 
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
 
+  @override
+  _CustomAppBarState createState() => _CustomAppBarState();
+}
+
+class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -23,11 +28,14 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
           builder: (context, value, child) {
             return IconButton(
               icon: Icon(
-                product.isFavourite ? Icons.favorite : Icons.favorite_border,
+                widget.product.isFavourite
+                    ? Icons.favorite
+                    : Icons.favorite_border,
                 color: Colors.black,
               ),
               onPressed: () {
-                product.toggleFavourite();
+                widget.product.toggleFavourite();
+                setState(() {});
               },
             );
           },

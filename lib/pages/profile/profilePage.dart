@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:shop_app/providers/productProvider.dart';
 
 class ProfilePage extends StatelessWidget {
   static const routeName = 'ProfilePage';
   @override
   Widget build(BuildContext context) {
+    final favourites = Provider.of<ProductProvider>(context).getFavourites;
     final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -28,13 +31,14 @@ class ProfilePage extends StatelessWidget {
               width: size.width,
               padding: EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
-                color: Colors.grey[200],
+                color: Colors.white,
                 borderRadius: BorderRadius.vertical(
                   top: Radius.circular(30),
                 ),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(height: 40),
                   Text(
@@ -44,10 +48,36 @@ class ProfilePage extends StatelessWidget {
                       fontSize: 24,
                     ),
                   ),
+                  SizedBox(height: 20),
+                  Text(
+                    'Your favorite products',
+                    style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Colors.black54,
+                    ),
+                  ),
+                  SizedBox(height: 10),
                   Expanded(
                     child: ListView.builder(
+                      physics: BouncingScrollPhysics(),
+                      itemCount: favourites.length,
                       itemBuilder: (context, index) {
-                        return Container();
+                        final product = favourites[index];
+
+                        return Container(
+                          height: 100,
+                          width: double.maxFinite,
+                          margin: EdgeInsets.only(top: 10),
+                          padding: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Row(
+                            children: [Text(product.name)],
+                          ),
+                        );
                       },
                     ),
                   ),
