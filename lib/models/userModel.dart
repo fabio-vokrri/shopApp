@@ -4,8 +4,8 @@ class User with ChangeNotifier {
   final String name;
   final String surname;
   final String email;
-  final DateTime birthday;
   final String image;
+  final DateTime birthday;
 
   User({
     @required this.name,

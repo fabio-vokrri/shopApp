@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/pages/pages.dart';
-import 'package:shop_app/routes/routeAnimation.dart';
+
 
 class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
@@ -13,14 +13,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
       elevation: 0,
       brightness: Brightness.light,
       leading: GestureDetector(
-        onTap: () => Navigator.push(
-          context,
-          RevealRoute(
-            page: ProfilePage(),
-            maxRadius: 1000,
-            alignment: Alignment.topLeft,
-          ),
-        ),
+        onTap: () => Navigator.of(context).pushNamed(ProfilePage.routeName),
         child: Container(
           margin: EdgeInsets.only(left: 20),
           decoration: BoxDecoration(

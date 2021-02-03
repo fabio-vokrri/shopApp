@@ -8,7 +8,6 @@ import 'likeButton.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
-
   const ProductCard({@required this.product});
 
   @override

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'package:shop_app/providers/productProvider.dart';
 
 class ProfilePage extends StatelessWidget {
   static const routeName = 'ProfilePage';
@@ -47,20 +45,16 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    child: Consumer<ProductProvider>(
-                      builder: (context, value, child) {
-                        return ListView.builder(
-                          itemBuilder: (context, index) {
-                            return Container();
-                          },
-                        );
+                    child: ListView.builder(
+                      itemBuilder: (context, index) {
+                        return Container();
                       },
                     ),
                   ),
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
