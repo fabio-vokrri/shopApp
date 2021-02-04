@@ -71,11 +71,13 @@ class ProfilePage extends StatelessWidget {
                           margin: EdgeInsets.only(top: 10),
                           padding: EdgeInsets.all(20),
                           decoration: BoxDecoration(
-                            color: Colors.grey[200],
+                            color: Colors.grey[300],
                             borderRadius: BorderRadius.circular(20),
                           ),
                           child: Row(
-                            children: [Text(product.name)],
+                            children: [
+                              Text(product.name),
+                            ],
                           ),
                         );
                       },
