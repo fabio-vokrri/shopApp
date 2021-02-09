@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-import 'package:shop_app/models/productModel.dart';
 import 'package:shop_app/providers/productProvider.dart';
 import 'components/customListTile.dart';
 
@@ -13,7 +12,7 @@ class ShoppingBagPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Product> shoppingBagProducts =
+    final shoppingBagProducts =
         Provider.of<ProductProvider>(context).getShoppingBag;
 
     return Scaffold(

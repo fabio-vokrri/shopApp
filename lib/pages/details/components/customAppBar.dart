@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:shop_app/providers/productProvider.dart';
 
 class CustomAppBar extends StatefulWidget with PreferredSizeWidget {
   final product;
@@ -18,26 +16,21 @@ class _CustomAppBarState extends State<CustomAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
-      elevation: 0,
       brightness: Brightness.light,
+      elevation: 0,
       iconTheme: IconThemeData(
         color: Colors.black,
       ),
       actions: [
-        Consumer<ProductProvider>(
-          builder: (context, value, child) {
-            return IconButton(
-              icon: Icon(
-                widget.product.isFavourite
-                    ? Icons.favorite
-                    : Icons.favorite_border,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                widget.product.toggleFavourite();
-                setState(() {});
-              },
-            );
+        IconButton(
+          icon: Icon(
+            widget.product.isFavourite ? Icons.favorite : Icons.favorite_border,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            setState(() {
+              widget.product.toggleFavourite();
+            });
           },
         ),
       ],

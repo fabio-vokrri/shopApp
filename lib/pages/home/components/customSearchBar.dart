@@ -9,7 +9,7 @@ class CustomSearchBar extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.only(left: 20),
         padding: EdgeInsets.only(left: 20),
-        height: 70,
+        height: 60,
         decoration: BoxDecoration(
           color: Colors.grey[200],
           borderRadius: BorderRadius.only(

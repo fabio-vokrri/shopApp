@@ -151,7 +151,7 @@ class ProductProvider with ChangeNotifier {
 
   List<Product> get getFavourites {
     return [
-      ...products.where((element) => element.isFavourite == true),
+      ...products.where((element) => element.isFavourite),
     ];
   }
 

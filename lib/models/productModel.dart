@@ -28,8 +28,11 @@ class Product with ChangeNotifier {
     notifyListeners();
   }
 
-  void addItem(int count) {
-    itemCount = count;
+  void addItemToCart(int count) {
+    if (count == 0)
+      itemCount++;
+    else
+      itemCount = count;
     notifyListeners();
   }
 
