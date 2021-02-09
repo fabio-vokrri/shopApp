@@ -12,6 +12,7 @@ void main() {
       statusBarColor: Colors.transparent,
     ),
   );
+
   runApp(ShopApp());
 }
 
@@ -28,7 +29,7 @@ class ShopApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'ShopApp',
         //initialRoute: CategoriesPage.routeName,
-        initialRoute: HomePage.routeName,
+        initialRoute: SplashPage.routeName,
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
     );

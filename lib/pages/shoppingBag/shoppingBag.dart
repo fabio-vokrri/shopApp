@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 import 'package:shop_app/providers/productProvider.dart';
-import 'components/customListTile.dart';
-
 import 'components/customAppBar.dart';
+import 'components/customBody1.dart';
+import 'components/customBody2.dart';
 
 class ShoppingBagPage extends StatelessWidget {
   static const routeName = 'shoppingBagPage';
@@ -19,45 +18,9 @@ class ShoppingBagPage extends StatelessWidget {
       backgroundColor: Colors.white,
       extendBodyBehindAppBar: true,
       appBar: CustomAppBar(),
-      body: Stack(
-        children: [
-          ListView.builder(
-            physics: BouncingScrollPhysics(),
-            itemCount: shoppingBagProducts.length,
-            itemBuilder: (context, index) {
-              final product = shoppingBagProducts[index];
-              return CustomListTile(product: product);
-            },
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              margin: EdgeInsets.all(20),
-              height: 60,
-              width: double.maxFinite,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Row(
-                children: [
-                  Consumer<ProductProvider>(
-                    builder: (context, value, child) {
-                      return Text(
-                        '${value.getTotal}',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      );
-                    },
-                  )
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
+      body: shoppingBagProducts.length == 0
+          ? CustomBody1()
+          : CustomBody2(shoppingBagProducts: shoppingBagProducts),
     );
   }
 }

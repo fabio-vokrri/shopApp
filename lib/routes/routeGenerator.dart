@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:shop_app/models/productModel.dart';
 import 'package:shop_app/pages/pages.dart';
 
@@ -7,6 +8,11 @@ class RouteGenerator {
     final arguments = settings.arguments;
 
     switch (settings.name) {
+      case SplashPage.routeName:
+        return MaterialPageRoute(
+          builder: (context) => SplashPage(),
+        );
+
       case HomePage.routeName:
         return MaterialPageRoute(
           builder: (context) => HomePage(),

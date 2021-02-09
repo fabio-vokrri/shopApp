@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.transparent,
+      centerTitle: true,
       title: Text(
         'Profile',
         style: GoogleFonts.poppins(
