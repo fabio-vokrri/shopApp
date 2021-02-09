@@ -61,7 +61,7 @@ class ProductCard extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    '\$${product.pice}',
+                    '\$${product.price}',
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,

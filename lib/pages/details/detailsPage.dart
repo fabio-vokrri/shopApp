@@ -9,7 +9,7 @@ class DetailsPage extends StatelessWidget {
   static const routeName = 'DetailsPage';
 
   final Product product;
-  const DetailsPage({@required this.product});
+  DetailsPage({@required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class DetailsPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       body: CustomBody(product: product),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: CustomFAB(),
+      floatingActionButton: CustomFAB(product: product),
     );
   }
 }

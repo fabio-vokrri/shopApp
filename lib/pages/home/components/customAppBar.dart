@@ -49,7 +49,11 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
             Icons.shopping_bag_outlined,
             color: Colors.black,
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed(
+              ShoppingBagPage.routeName,
+            );
+          },
         ),
       ],
     );

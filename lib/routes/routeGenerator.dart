@@ -29,6 +29,11 @@ class RouteGenerator {
           builder: (context) => ProfilePage(),
         );
 
+      case ShoppingBagPage.routeName:
+        return MaterialPageRoute(
+          builder: (context) => ShoppingBagPage(),
+        );
+
       default:
         return _buildErrorPage();
     }

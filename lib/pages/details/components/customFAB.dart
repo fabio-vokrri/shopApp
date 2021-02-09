@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:shop_app/models/productModel.dart';
+
 class CustomFAB extends StatelessWidget {
+  final Product product;
+  final count = 1;
+
+  const CustomFAB({@required this.product});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () => product.addItem(count),
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
         height: 60,

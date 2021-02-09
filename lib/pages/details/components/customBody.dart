@@ -44,7 +44,7 @@ class CustomBody extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      '\$${product.pice}',
+                      '\$${product.price}',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.bold,
                         fontSize: 24,
