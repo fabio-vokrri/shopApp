@@ -28,7 +28,6 @@ class ShopApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'ShopApp',
-        //initialRoute: CategoriesPage.routeName,
         initialRoute: SplashPage.routeName,
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
