@@ -18,6 +18,11 @@ class RouteGenerator {
           builder: (context) => SignUpPage(),
         );
 
+      case SignInPage.routeName:
+        return MaterialPageRoute(
+          builder: (context) => SignInPage(),
+        );
+
       case HomePage.routeName:
         return MaterialPageRoute(
           builder: (context) => HomePage(),

@@ -22,7 +22,7 @@ class _CustomFormState extends State<CustomForm> {
     r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$",
     caseSensitive: false,
   );
-
+  
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -49,7 +49,7 @@ class _CustomFormState extends State<CustomForm> {
             validator: (value) {
               if (value.isEmpty)
                 return 'Please enter your email';
-              else if (exp.hasMatch(value))
+              else if (exp.hasMatch(value) != true)
                 return 'Please enter a valid E-mail';
               else
                 return null;
@@ -72,5 +72,3 @@ class _CustomFormState extends State<CustomForm> {
     super.dispose();
   }
 }
-
-// r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$"

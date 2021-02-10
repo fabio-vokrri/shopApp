@@ -28,7 +28,7 @@ class ShopApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'ShopApp',
-        initialRoute: SignUpPage.routeName,
+        initialRoute: SplashPage.routeName,
         // initialRoute: SplashPage.routeName,
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
