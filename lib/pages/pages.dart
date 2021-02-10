@@ -4,5 +4,5 @@ export 'package:shop_app/pages/details/detailsPage.dart';
 export 'package:shop_app/pages/profile/profilePage.dart';
 export 'package:shop_app/pages/shoppingBag/shoppingBag.dart';
 export 'package:shop_app/pages/splash/splashPage.dart';
-
+export 'package:shop_app/pages/sign_up/signUp.dart';
 

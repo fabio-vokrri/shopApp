@@ -13,6 +13,11 @@ class RouteGenerator {
           builder: (context) => SplashPage(),
         );
 
+      case SignUpPage.routeName:
+        return MaterialPageRoute(
+          builder: (context) => SignUpPage(),
+        );
+
       case HomePage.routeName:
         return MaterialPageRoute(
           builder: (context) => HomePage(),
