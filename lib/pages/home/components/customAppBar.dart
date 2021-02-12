@@ -17,7 +17,7 @@ class CustomAppBar extends StatelessWidget with PreferredSizeWidget {
           context,
           RevealRoute(
             page: ProfilePage(),
-            maxRadius: 1000,
+            maxRadius: 1500,
             alignment: Alignment.topLeft,
           ),
         ),

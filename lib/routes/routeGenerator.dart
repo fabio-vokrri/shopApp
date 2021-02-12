@@ -23,14 +23,14 @@ class RouteGenerator {
           builder: (context) => SignInPage(),
         );
 
-      case HomePage.routeName:
-        return MaterialPageRoute(
-          builder: (context) => HomePage(),
-        );
-
       case CategoriesPage.routeName:
         return MaterialPageRoute(
           builder: (context) => CategoriesPage(),
+        );
+
+      case HomePage.routeName:
+        return MaterialPageRoute(
+          builder: (context) => HomePage(),
         );
 
       case DetailsPage.routeName:

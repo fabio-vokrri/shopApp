@@ -37,8 +37,9 @@ class CustomBody2 extends StatelessWidget {
               children: [
                 Consumer<ProductProvider>(
                   builder: (context, value, child) {
+                    double totalPrice = value.getTotal();
                     return Text(
-                      'Total amount: ${value.getTotal}',
+                      'Total amount:  \$${totalPrice.toStringAsFixed(2)}',
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.bold,
                         color: Colors.white,

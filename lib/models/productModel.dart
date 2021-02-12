@@ -38,6 +38,11 @@ class Product extends ChangeNotifier {
     itemCount++;
     notifyListeners();
   }
+
+  void removeProduct() {
+    itemCount = 0;
+    notifyListeners();
+  }
 }
 
 class ProductProvider {

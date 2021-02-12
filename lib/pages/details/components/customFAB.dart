@@ -33,8 +33,8 @@ class _CustomFABState extends State<CustomFAB> {
           children: [
             Icon(
               widget.product.itemCount > 0
-                  ? Icons.shopping_bag_outlined
-                  : Icons.done,
+                  ? Icons.done
+                  : Icons.shopping_bag_outlined,
               color: Colors.white,
             ),
             SizedBox(width: 10),

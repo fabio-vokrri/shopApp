@@ -23,14 +23,14 @@ class _CustomAppBarState extends State<CustomAppBar> {
       ),
       actions: [
         IconButton(
+          onPressed: () {
+            widget.product.toggleFavourite();
+            setState(() {});
+          },
           icon: Icon(
             widget.product.isFavourite ? Icons.favorite : Icons.favorite_border,
             color: Colors.black,
           ),
-          onPressed: () {
-            widget.product.togglefavourite();
-            setState(() {});
-          },
         ),
       ],
     );
