@@ -28,9 +28,8 @@ class _CustomAppBarState extends State<CustomAppBar> {
             color: Colors.black,
           ),
           onPressed: () {
-            setState(() {
-              widget.product.toggleFavourite();
-            });
+            widget.product.togglefavourite();
+            setState(() {});
           },
         ),
       ],

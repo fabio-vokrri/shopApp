@@ -3,15 +3,23 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:shop_app/models/productModel.dart';
 
-class CustomFAB extends StatelessWidget {
+class CustomFAB extends StatefulWidget {
   final Product product;
 
   const CustomFAB({@required this.product});
 
   @override
+  _CustomFABState createState() => _CustomFABState();
+}
+
+class _CustomFABState extends State<CustomFAB> {
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => product.addItemToCart(1),
+      onTap: () {
+        widget.product.addToShoppingBag();
+        setState(() {});
+      },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 20, vertical: 6),
         height: 60,
@@ -24,7 +32,9 @@ class CustomFAB extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
-              Icons.shopping_bag_outlined,
+              widget.product.itemCount > 0
+                  ? Icons.shopping_bag_outlined
+                  : Icons.done,
               color: Colors.white,
             ),
             SizedBox(width: 10),
@@ -32,7 +42,7 @@ class CustomFAB extends StatelessWidget {
               'Add to cart',
               style: GoogleFonts.poppins(
                 color: Colors.white,
-                fontSize: 16,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             )

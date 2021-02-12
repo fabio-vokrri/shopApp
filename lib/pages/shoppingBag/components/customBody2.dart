@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import 'package:shop_app/models/productModel.dart';
+
 import 'package:shop_app/pages/shoppingBag/components/customListTile.dart';
-import 'package:shop_app/providers/productProvider.dart';
 
 class CustomBody2 extends StatelessWidget {
   final shoppingBagProducts;

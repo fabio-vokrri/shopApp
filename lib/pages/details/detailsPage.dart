@@ -6,7 +6,7 @@ import 'components/customBody.dart';
 import 'components/customFAB.dart';
 
 class DetailsPage extends StatelessWidget {
-  static const routeName = 'DetailsPage';
+  static const routeName = 'detailsPage';
 
   final Product product;
   DetailsPage({@required this.product});

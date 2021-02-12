@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shop_app/pages/home/components/productCards.dart';
+import 'package:provider/provider.dart';
 
-import 'package:shop_app/providers/productProvider.dart';
 import 'package:shop_app/models/productModel.dart';
+
 import 'customSearchBar.dart';
+import 'productCards.dart';
 
 class CustomBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final List<Product> products = ProductProvider().getProducts;
+    final List<Product> products =
+        Provider.of<ProductProvider>(context).getProducts;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:shop_app/providers/productProvider.dart';
+import 'package:shop_app/models/productModel.dart';
 
 import 'package:shop_app/routes/routeGenerator.dart';
 import 'package:shop_app/pages/pages.dart';
@@ -21,15 +21,14 @@ class ShopApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
+        Provider(
           create: (context) => ProductProvider(),
         ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'ShopApp',
-        initialRoute: SplashPage.routeName,
-        // initialRoute: SplashPage.routeName,
+        initialRoute: HomePage.routeName,
         onGenerateRoute: RouteGenerator.generateRoute,
       ),
     );

@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import 'package:shop_app/providers/productProvider.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app/models/productModel.dart';
 
 class FavouriteProductsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final favouriteProducts =
-        Provider.of<ProductProvider>(context).getFavourites;
-        
+        Provider.of<ProductProvider>(context).getFavouriteProducts;
+
     return Expanded(
       child: ListView.builder(
         physics: BouncingScrollPhysics(),
